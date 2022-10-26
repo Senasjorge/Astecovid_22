@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
+  PuntosExtra: 1000
 --- !u!60 &-7944006953018095573
 PolygonCollider2D:
   m_ObjectHideFlags: 0

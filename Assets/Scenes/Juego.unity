@@ -222,7 +222,7 @@ RectTransform:
   - {fileID: 1694794235}
   - {fileID: 1694402115}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -244,6 +244,7 @@ MonoBehaviour:
   Tiempo: {fileID: 202303185}
   Puntuacion: {fileID: 373538670}
   Vidas: {fileID: 1612073717}
+  PuntosFinales: {fileID: 373538670}
   GameOver: {fileID: 1694794234}
   MusicaFondo: {fileID: 1694402113}
 --- !u!1 &202303183
@@ -398,6 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidas: 3
   puntuacion: 0
+  PuntosFinales: 0
 --- !u!1 &373538668
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidas: 3
   puntuacion: 0
+  PuntosFinales: 0
 --- !u!4 &632045434
 Transform:
   m_ObjectHideFlags: 0
@@ -661,56 +664,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &750126738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 750126740}
-  - component: {fileID: 750126739}
-  m_Layer: 0
-  m_Name: AstecovidManager (3)
-  m_TagString: Astecovid
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &750126739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750126738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b724541edd2a54b47af0845ce21ade01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  astecovids_min: 1
-  astecovids_max: 2
-  astecovids: 0
-  limitX: 10
-  limitY: 6
-  astecovid: {fileID: 4150909617588279143, guid: a3eef4dc6d930de44929437abbf45b49, type: 3}
---- !u!4 &750126740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750126738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
@@ -795,7 +748,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -0.001, y: 0, z: 0}
 --- !u!1 &1125701827
 GameObject:
@@ -906,10 +859,7 @@ MonoBehaviour:
   rotationspeed: 200
   bala: {fileID: 208101191815946733, guid: 5500e09bce2882f41992f4ad0dd6647c, type: 3}
   boquilla: {fileID: 1505137846}
-  shot: {fileID: 0}
-  impulse: {fileID: 0}
-  shotsound: {fileID: 0}
-  impulsesound: {fileID: 8300000, guid: 03cd342fc6f2979418901e5b2ac0559a, type: 3}
+  particulasmuerte: {fileID: 5367572648381879683, guid: 4276cbf79c6c49143bc808f1e5366b1f, type: 3}
 --- !u!212 &1192067927
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -976,7 +926,7 @@ Transform:
   m_Children:
   - {fileID: 1505137847}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1192067929
 Animator:
@@ -1273,7 +1223,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1d9128bbc9108a44da0d945eb6f96aeb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.462
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1426,6 +1376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidas: 3
   puntuacion: 0
+  PuntosFinales: 0
 --- !u!114 &1694794237
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,17 +9,21 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    CircleCollider2D collider;
+    SpriteRenderer sprite;
     public float speed = 10;
     public float rotationspeed = 10;
     public GameObject bala;
     public GameObject boquilla;
-    public AudioSource shot;
-    public AudioClip shotsound;
+    public GameObject particulasmuerte;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        collider = GetComponent<CircleCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
 
     }
 
@@ -44,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GameObject temp = Instantiate(bala, boquilla.transform.position, transform.rotation);
             Destroy(temp, 2);
-            shot.PlayOneShot(shotsound);
+
 
         }
 
@@ -52,30 +56,32 @@ public class PlayerMovement : MonoBehaviour
     public void Muerte()
     {
 
-        GameManager.instance.vidas -= 1;
-        transform.position = new Vector3(0, 0, 0);
-        rb.velocity = new Vector2(0, 0);
-        if (GameManager.instance.vidas <= 0)
+        GameObject temp = Instantiate(particulasmuerte, transform.position, transform.rotation);
+        Destroy (temp, 2);
+        StartCoroutine(Respawn_Coroutine());
+
+    }   
+        IEnumerator Respawn_Coroutine()
         {
-            Destroy(gameObject);
-            Time.timeScale = 0;
-           
-            
-        }
-    }    
-    public void Muerte3()
-    {
-        
-        GameManager.instance.vidas -= 1;
-        transform.position = new Vector3(0, 0, 0);
-        rb.velocity = new Vector2 (0, 0);
-        if (GameManager.instance.vidas <= 0)
-        {
-            Destroy(gameObject);
-            Time.timeScale = 0;
-           
+            collider.enabled = false;
+            sprite.enabled = false;
+            yield return new WaitForSeconds(5);
+            collider.enabled = true;
+            sprite.enabled = true;
+            GameManager.instance.vidas -= 1;
+            transform.position = new Vector3(0, 0, 0);
+            rb.velocity = new Vector2(0, 0);
+
+            if (GameManager.instance.vidas <= 0)
+            {
+                Destroy(gameObject);
+                Time.timeScale = 0;
+
+
+
+            }
+
 
         }
-               
-    }
 }
+
