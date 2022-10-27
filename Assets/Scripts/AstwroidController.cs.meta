@@ -5,8 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - manager: {instanceID: 0}
-  - muerte: {instanceID: 0}
-  - muertejugador: {fileID: 8300000, guid: d7df6cc2d261f52488ee9b7a0568859f, type: 3}
+  - MuertePlayer: {instanceID: 0}
+  - muerte: {fileID: 8300000, guid: d7df6cc2d261f52488ee9b7a0568859f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

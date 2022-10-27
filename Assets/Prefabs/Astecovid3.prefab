@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4150909617588279142}
   - component: {fileID: -1374452359534327128}
   - component: {fileID: 8358983380047897095}
+  - component: {fileID: -7956945709915787217}
   m_Layer: 0
   m_Name: Astecovid3
   m_TagString: Astecovid
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4150909617588279143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15d33f4091dacb4dba67ab297c9c148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_min: 0
-  speed_max: 0
+  speed_min: 120
+  speed_max: 180
+  puntosAstecovid: 40
   manager: {fileID: 0}
 --- !u!114 &4150909617588279142
 MonoBehaviour:
@@ -154,3 +156,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-7956945709915787217
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150909617588279143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9c27bc5b7a688d4a971778eb0ba6341, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

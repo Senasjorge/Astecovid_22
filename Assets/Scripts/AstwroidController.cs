@@ -5,9 +5,11 @@ using UnityEngine;
 public class AstwroidController : MonoBehaviour
 {
     public float speed_min;
-    public float speed_max; 
+    public float speed_max;
+    public int puntosAstecovid;
     Rigidbody2D rb;
     public AstecovidManager manager;
+   
     
     void Start()
     {
@@ -17,19 +19,12 @@ public class AstwroidController : MonoBehaviour
         Debug.Log(Random.Range(-1f, 1f));
         rb.AddForce(direccion);
         manager.astecovids += 1;
-
-    }
-
-    
-    void Update()
-    {
-      
     }
 
     public void Muerte()
     {
 
-        if (transform.localScale.x > 0.25f)
+        if (transform.localScale.x > 0.3f)
 
         {
             GameObject temp1 = Instantiate(manager.astecovid, transform.position, transform.rotation);
@@ -40,11 +35,11 @@ public class AstwroidController : MonoBehaviour
             temp2.transform.localScale = transform.localScale * 0.5f;
              
         }
-        GameManager.instance.puntuacion += 100;
+        
+        GameManager.instance.puntuacion += puntosAstecovid;
         manager.astecovids -= 1;
         Destroy(gameObject);
-      
-        
+               
     }  
     
                         
@@ -52,13 +47,10 @@ public class AstwroidController : MonoBehaviour
      {
         if (collision.tag == "Player")
         {
-                collision.gameObject.GetComponent<PlayerMovement>().Muerte();
-                
-
-              
+            collision.gameObject.GetComponent<PlayerMovement>().Muerte();
+                             
         }
-        
-        
+               
     }
             
     

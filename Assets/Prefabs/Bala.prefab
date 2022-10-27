@@ -123,7 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  PuntosExtra: 1000
+  AstecovidExplode: {fileID: 8942340691741343895, guid: a3eef4dc6d930de44929437abbf45b49, type: 3}
+  explode: {fileID: 0}
 --- !u!60 &-7944006953018095573
 PolygonCollider2D:
   m_ObjectHideFlags: 0

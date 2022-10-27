@@ -7,14 +7,14 @@ public class MenuInicio : MonoBehaviour
 {
     public void Play()
     {
+        //Cambio de escena de menu inicio a Juego
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 
     public void Exit()
     {
-        Debug.Log("Salir");
-        Application.Quit();
+        // Mensaje de Salir en consola al pulsar boton salir
+        Debug.Log("Salir");       
     
     }
 }

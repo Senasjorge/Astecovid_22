@@ -6,46 +6,32 @@ public class AstecovidManager : MonoBehaviour
 {
     public int astecovids_min = 1;
     public int astecovids_max = 3; 
-    public int astecovids;
-   
+    public int astecovids;   
     public float limitX = 10;
     public float limitY = 6;
     public GameObject astecovid;
     
-
-    // Start is called before the first frame update
     void Start()
     {
-        CrearAstecovids();
-        
-
+        CrearAstecovids();   
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (astecovids <= 0)
         {
             astecovids_min += 2;
             astecovids_max += 2;
-            CrearAstecovids();
-            
-
-        } 
-        
+            CrearAstecovids();           
+        }        
     }
-    // "Instanciando Asteroides
+    // Instanciando Asteroides
     void CrearAstecovids()
     {
         {
             int astecovids = Random.Range(astecovids_min, astecovids_max);
             
-            
-
-
             for (int i = 0; i < astecovids; i++)
-            {
-                
+            {                
                 Vector3 posicion = new Vector3(Random.Range(-limitX, limitX), Random.Range(-limitX, limitX));
 
                 while (Vector3.Distance(posicion,new Vector3(0,0)) < 2)
@@ -57,8 +43,6 @@ public class AstecovidManager : MonoBehaviour
                 temp.GetComponent<AstwroidController>().manager = this;
             }
             
-
-
         }
     }
    

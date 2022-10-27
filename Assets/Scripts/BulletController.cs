@@ -14,7 +14,6 @@ public class BulletController : MonoBehaviour
         rb.AddForce(transform.up * speed);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -27,9 +26,6 @@ public class BulletController : MonoBehaviour
             collision.gameObject.GetComponent<AstwroidController>().Muerte();
             Destroy(gameObject);
         }
-        
-        
-
     }
 }
         
