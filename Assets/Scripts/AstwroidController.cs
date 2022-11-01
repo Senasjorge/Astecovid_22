@@ -16,7 +16,6 @@ public class AstwroidController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Vector2 direccion = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
         direccion = direccion * Random.Range(speed_min, speed_max);
-        Debug.Log(Random.Range(-1f, 1f));
         rb.AddForce(direccion);
         manager.astecovids += 1;
     }
